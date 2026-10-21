@@ -37,7 +37,7 @@
     });
 
     const label = document.createElement("label");
-    label.textContent = "Spanish → English";
+    label.textContent = "Translation";
     Object.assign(label.style, {
       display: "block",
       marginBottom: "6px",
@@ -47,7 +47,7 @@
 
     input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "Write a Spanish word or phrase...";
+    input.placeholder = "Write a word or phrase...";
     input.autocomplete = "off";
 
     Object.assign(input.style, {
@@ -194,41 +194,49 @@
 
   function translate() {
     const phrase = input.value.trim();
+
     if (!phrase) {
-      result.textContent = "Please enter a Spanish word or phrase.";
+      result.textContent = "Please enter a word or phrase.";
       return;
     }
 
     const currentRequest = ++requestId;
-
     result.textContent = "Translating...";
     delete result.dataset.translation;
     popup._copyButton.style.display = "none";
 
-    chrome.runtime.sendMessage(
-      {
-        type: "translate",
-        word: phrase,
-        langpair: "es|en"
-      },
-      response => {
-        if (currentRequest !== requestId || popup.style.display === "none") {
-          return;
+    chrome.storage.local.get(
+      { sourceLanguage: "en", targetLanguage: "es" },
+      settings => {
+        let langpair;
+
+        if (settings.sourceLanguage === "auto") {
+          langpair = `autodetect|${settings.targetLanguage}`;
+        } else {
+          langpair = `${settings.targetLanguage}|${settings.sourceLanguage}`;
         }
 
-        if (chrome.runtime.lastError || !response?.translation) {
-          result.textContent =
-            response?.error || "Translation unavailable. Try again later.";
-          return;
-        }
+        chrome.runtime.sendMessage(
+          { type: "translate", word: phrase, langpair },
+          response => {
+            if (currentRequest !== requestId || popup.style.display === "none") {
+              return;
+            }
 
-        result.textContent = response.translation;
-        result.dataset.translation = response.translation;
-        popup._copyButton.style.display = "inline-block";
+            if (chrome.runtime.lastError || !response?.translation) {
+              result.textContent =
+                response?.error || "Translation unavailable. Try again later.";
+              return;
+            }
+
+            result.textContent = response.translation;
+            result.dataset.translation = response.translation;
+            popup._copyButton.style.display = "inline-block";
+          }
+        );
       }
     );
   }
-
   document.addEventListener("dblclick", event => {
     // Don't interfere with typing, editing, links, or selecting page text.
     if (event.target.closest(
@@ -256,3 +264,6 @@
 
   window.addEventListener("scroll", closePopup, true);
 })();
+
+
+

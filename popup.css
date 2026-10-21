@@ -1,0 +1,28 @@
+﻿* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 320px;
+  padding: 18px;
+  background: #f7f9f8;
+  color: #17201d;
+  font: 14px/1.5 system-ui, sans-serif;
+}
+h1 { margin: 0; font-size: 24px; }
+p { color: #68736e; }
+label { display: block; margin: 15px 0 6px; font-weight: 650; }
+select, button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 9px;
+  font: inherit;
+}
+select { border: 1px solid #cbd5d0; background: white; color: #17201d; }
+button {
+  margin-top: 18px;
+  border: 0;
+  background: #ffb950;
+  color: #17201d;
+  font-weight: 700;
+  cursor: pointer;
+}
+#status { font-size: 12px; }
