@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#DFFF45">
+  <meta name="description" content="Utility Tools brings practical, free online tools together in one simple, accessible experience.">
+
+  <title>Utility Tools — Useful Tools. Simpler Days.</title>
+
+  <style>
+    :root {
+      --lime: #DFFF45;
+      --lime-dark: #566900;
+      --ink: #111615;
+      --paper: #F5F6F0;
+      --muted: #596157;
+      --white: #FFFFFF;
+      --border: #DCE0D4;
+      --radius: 20px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--lime-dark);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--max-width), 88%);
+      margin-inline: auto;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 246, 240, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 12px;
+      background: var(--lime);
+      border: 1px solid var(--ink);
+    }
+
+    .brand-icon svg {
+      width: 29px;
+      height: 29px;
+    }
+
+    .brand-icon circle,
+    .brand-icon path {
+      stroke: var(--ink);
+    }
+
+    .brand-icon circle {
+      fill: var(--ink);
+      stroke: none;
+    }
+
+    .brand-icon path {
+      fill: none;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brand-name span {
+      font-weight: 400;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .nav a:not(.nav-cta):hover {
+      color: var(--lime-dark);
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 19px;
+      border: 1.5px solid var(--ink);
+      border-radius: 12px;
+      background: var(--lime);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition:
+        background 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
+    }
+
+    .nav-cta:hover,
+    .button:hover {
+      background: var(--ink);
+      color: var(--lime);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 35px;
+      margin: 38px 0 78px;
+      padding: clamp(30px, 6vw, 70px);
+      background: var(--lime);
+      border: 1px solid var(--ink);
+      border-radius: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 19px;
+      font-size: 0.73rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 23px;
+      font-size: clamp(3.1rem, 7.7vw, 6.4rem);
+      line-height: 0.93;
+      letter-spacing: -0.085em;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      margin-bottom: 28px;
+      font-size: clamp(1rem, 2vw, 1.13rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: var(--lime);
+    }
+
+    .button-dark:hover {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .hero-art {
+      display: grid;
+      place-items: center;
+      min-width: 0;
+    }
+
+    .logo-large {
+      width: min(100%, 300px);
+      filter: drop-shadow(9px 12px 0 rgba(17, 22, 21, 0.08));
+    }
+
+    .logo-large circle {
+      fill: var(--ink);
+    }
+
+    .logo-large path {
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 12;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Shared sections */
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h2 {
+      max-width: 650px;
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4.5vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: -0.065em;
+    }
+
+    .section-heading p {
+      max-width: 400px;
+      margin-bottom: 3px;
+      color: var(--muted);
+    }
+
+    .section-label {
+      margin-bottom: 13px;
+      color: var(--lime-dark);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    /* Tool cards */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+      margin-top: 28px;
+    }
+
+    .tool-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+      padding: 25px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition:
+        border-color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--ink);
+      box-shadow: 5px 5px 0 var(--lime);
+    }
+
+    .tool-icon {
+      display: grid;
+      place-items: center;
+      width: 49px;
+      height: 49px;
+      margin-bottom: 24px;
+      border: 1px solid var(--ink);
+      border-radius: 14px;
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .tool-icon svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .tool-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.25rem;
+      letter-spacing: -0.035em;
+    }
+
+    .tool-card p {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tool-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      margin-top: auto;
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .tool-link span {
+      color: var(--lime-dark);
+      transition: transform 160ms ease;
+    }
+
+    .tool-link:hover span {
+      transform: translateX(4px);
+    }
+
+    /* Brand identity */
+
+    .identity {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 35px;
+      align-items: center;
+      padding: clamp(25px, 5vw, 48px);
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 26px;
+    }
+
+    .identity h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.065em;
+    }
+
+    .identity p {
+      max-width: 490px;
+      margin-bottom: 0;
+      color: #D0D6CC;
+    }
+
+    .identity-mark {
+      display: grid;
+      place-items: center;
+      min-height: 235px;
+      padding: 25px;
+      border-radius: 19px;
+      background: var(--lime);
+    }
+
+    .identity-mark svg {
+      width: min(100%, 175px);
+    }
+
+    .identity-mark circle {
+      fill: var(--ink);
+    }
+
+    .identity-mark path {
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 12;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Colour palette */
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .swatch {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .swatch-color {
+      height: 95px;
+    }
+
+    .swatch-info {
+      padding: 15px;
+    }
+
+    .swatch-info strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.92rem;
+    }
+
+    .swatch-info code {
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* Monetization */
+
+    .monetization-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+      margin-top: 27px;
+    }
+
+    .idea-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .idea-number {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 6px 10px;
+      border-radius: 7px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .idea-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.23rem;
+      letter-spacing: -0.035em;
+    }
+
+    .idea-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* AdSense note */
+
+    .notice {
+      margin: 65px 0 80px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--lime);
+      border-radius: 0 16px 16px 0;
+      background: var(--white);
+    }
+
+    .notice h2 {
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+      letter-spacing: -0.04em;
+    }
+
+    .notice p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    /* Footer */
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+    }
+
+    .footer-brand span {
+      color: var(--lime-dark);
+      font-weight: 400;
+    }
+
+    .footer-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr 0.55fr;
+        padding: 35px;
+      }
+
+      .logo-large {
+        width: 190px;
+      }
+
+      .tools-grid,
+      .monetization-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .palette {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .identity {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 22px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .brand-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 23px 0 58px;
+        padding: 28px 23px;
+        border-radius: 23px;
+      }
+
+      h1 {
+        font-size: clamp(3.1rem, 15vw, 5rem);
+      }
+
+      .hero-art {
+        justify-content: start;
+      }
+
+      .logo-large {
+        width: 125px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .tools-grid,
+      .monetization-grid,
+      .palette {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-card {
+        min-height: 215px;
+      }
+
+      .identity {
+        grid-template-columns: 1fr;
+        padding: 25px;
+      }
+
+      .identity-mark {
+        min-height: 190px;
+      }
+
+      .swatch {
+        display: grid;
+        grid-template-columns: 105px 1fr;
+      }
+
+      .swatch-color {
+        height: 100%;
+        min-height: 83px;
+      }
+
+      .notice {
+        margin: 48px 0 60px;
+        padding: 22px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="#" aria-label="Utility Tools home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="34" cy="12" r="7"/>
+            <circle cx="66" cy="12" r="7"/>
+            <path d="M20 28 V49 C20 69 32 81 50 81 C68 81 80 69 80 49 V28"/>
+          </svg>
+        </span>
+        <span class="brand-name">Utility<span>TOOLS</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+        <a href="#ideas">Ideas</a>
+        <a class="nav-cta" href="#tools">Explore tools ↗</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Everyday utility · Brand identity</p>
+
+        <h1>
+          Useful tools.
+          <span>Simpler days.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Practical digital tools for everyday tasks.
+          Simple to use, easy to understand, and designed
+          to help you get things done.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-dark" href="#tools">
+            Explore tools <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button" href="#about">
+            Our identity
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg class="logo-large" viewBox="0 0 128 128"
+             role="img" aria-label="Utility Tools U symbol with two dots">
+          <circle cx="44" cy="15" r="7.5"/>
+          <circle cx="81" cy="15" r="7.5"/>
+          <path d="M27 32 V62 C27 84 41 99 62 99
+                   C83 99 101 84 101 62 V32"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Tools -->
+
+    <section class="section" id="tools">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">01 · The collection</p>
+          <h2>Everything useful.<br>Nothing complicated.</h2>
+        </div>
+
+        <p>
+          A growing collection of everyday utilities,
+          designed to make small tasks faster and easier.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h10"/>
+              <path d="m17 15 3 3-3 3"/>
+            </svg>
+          </div>
+          <h3>Text tools</h3>
+          <p>
+            Format text, count words, change letter case
+            and clean up text for everyday use.
+          </p>
+          <a class="tool-link" href="#ideas">
+            Explore text tools <span>→</span>
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="3" width="16" height="18" rx="2"/>
+              <path d="M8 7h8M8 11h2m4 0h2m-8 4h2m4 0h2M8 18h2"/>
+            </svg>
+          </div>
+          <h3>Calculators</h3>
+          <p>
+            Handle percentages, everyday maths, budgets
+            and other common calculations.
+          </p>
+          <a class="tool-link" href="#ideas">
+            Explore calculators <span>→</span>
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 7H4V3"/>
+              <path d="M4 7a8 8 0 0 1 14-2l2 2"/>
+              <path d="M16 17h4v4"/>
+              <path d="M20 17a8 8 0 0 1-14 2l-2-2"/>
+            </svg>
+          </div>
+          <h3>Unit converters</h3>
+          <p>
+            Convert measurements and everyday units
+            with clear, straightforward results.
+          </p>
+          <a class="tool-link" href="#ideas">
+            Explore converters <span>→</span>
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14 2v6h6M8 13h8M8 17h8"/>
+            </svg>
+          </div>
+          <h3>File utilities</h3>
+          <p>
+            Plan helpful file tools for common formats,
+            with clear guidance about supported files.
+          </p>
+          <a class="tool-link" href="#ideas">
+            Explore file tools <span>→</span>
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="m20 20-4-4M8 11h6M11 8v6"/>
+            </svg>
+          </div>
+          <h3>Everyday helpers</h3>
+          <p>
+            Build small, focused utilities that solve
+            specific problems without unnecessary steps.
+          </p>
+          <a class="tool-link" href="#ideas">
+            Explore helpers <span>→</span>
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M7 9h10M7 13h6M7 16h4"/>
+              <circle cx="17" cy="16" r="1"/>
+            </svg>
+          </div>
+          <h3>Productivity tools</h3>
+          <p>
+            Create simple tools for organising information,
+            planning work and staying focused.
+          </p>
+          <a class="tool-link" href="#ideas">
+            Explore productivity <span>→</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Identity -->
+
+    <section class="section identity" id="about">
+      <div>
+        <p class="section-label" style="color: var(--lime);">
+          02 · Brand identity
+        </p>
+
+        <h2>The U.<br>Two dots.<br>One identity.</h2>
+
+        <p>
+          The U represents Utility. Two dots create a distinctive
+          signature that works across websites, applications,
+          favicons and other digital touchpoints.
+        </p>
+      </div>
+
+      <div class="identity-mark">
+        <svg viewBox="0 0 128 128"
+             role="img" aria-label="Utility Tools brand symbol">
+          <circle cx="44" cy="15" r="7.5"/>
+          <circle cx="81" cy="15" r="7.5"/>
+          <path d="M27 32 V62 C27 84 41 99 62 99
+                   C83 99 101 84 101 62 V32"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Colour palette -->
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">03 · Colour system</p>
+          <h2>Lime green.<br>Charcoal. Clarity.</h2>
+        </div>
+
+        <p>
+          A bright signature colour, grounded by deep charcoal
+          and balanced with a soft, neutral background.
+        </p>
+      </div>
+
+      <div class="palette">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#DFFF45;"></div>
+          <div class="swatch-info">
+            <strong>Utility Lime</strong>
+            <code>#DFFF45</code>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-color" style="background:#111615;"></div>
+          <div class="swatch-info">
+            <strong>Charcoal</strong>
+            <code>#111615</code>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-color" style="background:#F5F6F0;"></div>
+          <div class="swatch-info">
+            <strong>Soft Paper</strong>
+            <code>#F5F6F0</code>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FFFFFF;"></div>
+          <div class="swatch-info">
+            <strong>Clean White</strong>
+            <code>#FFFFFF</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monetization -->
+
+    <section class="section" id="ideas">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">04 · Growth strategy</p>
+          <h2>Build value first.<br>Grow with purpose.</h2>
+        </div>
+
+        <p>
+          Useful tools and genuinely helpful content can form
+          the foundation of a sustainable website.
+        </p>
+      </div>
+
+      <div class="monetization-grid">
+
+        <article class="idea-card">
+          <span class="idea-number">IDEA 01</span>
+          <h3>Free online tools</h3>
+          <p>
+            Offer useful calculators, text formatters, converters
+            and productivity helpers. Provide clear instructions
+            and original examples for each tool.
+          </p>
+        </article>
+
+        <article class="idea-card">
+          <span class="idea-number">IDEA 02</span>
+          <h3>Helpful tutorials</h3>
+          <p>
+            Publish original guides that solve specific problems.
+            Include practical steps, real examples and relevant
+            answers to common questions.
+          </p>
+        </article>
+
+        <article class="idea-card">
+          <span class="idea-number">IDEA 03</span>
+          <h3>Curated tool collections</h3>
+          <p>
+            Group related tools into useful topic pages for
+            writing, calculations, conversions and productivity.
+            Make every page valuable on its own.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- AdSense guidance -->
+
+    <aside class="notice">
+      <h2>Advertising with responsibility.</h2>
+      <p>
+        Google AdSense approval and earnings are not guaranteed.
+        Build original, useful content and review Google's current
+        programme policies before applying. Never click your own
+        ads or encourage invalid clicks. Keep advertisements clearly
+        distinguishable from navigation, tool controls and results.
+        Do not assume a website advertising approval covers a
+        browser extension or another product interface.
+      </p>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#">
+        Utility <span>TOOLS</span>
+      </a>
+
+      <p class="footer-copy">
+        © <span id="year">2026</span> Utility Tools ·
+        Lime identity · Brand concept v2.0
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

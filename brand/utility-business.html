@@ -1,0 +1,533 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Utility Business brand identity and business resource concept.">
+  <title>Utility Business — Brand Identity</title>
+
+  <style>
+    :root {
+      --sky: #58B9FF;
+      --sky-dark: #1689DF;
+      --sky-light: #EAF6FF;
+      --ink: #111615;
+      --paper: #F2F7FB;
+      --white: #FFFFFF;
+      --muted: #566672;
+      --border: #D8E8F4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    header {
+      padding: 22px 6%;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 900;
+      letter-spacing: -.045em;
+    }
+
+    .brand span {
+      color: var(--sky-dark);
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 35px;
+      height: 35px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark circle {
+      fill: var(--sky-dark);
+    }
+
+    .brand-mark text {
+      fill: var(--sky-dark);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+    }
+
+    main {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+      padding: 48px 0 60px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--sky-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: .98;
+      letter-spacing: -.075em;
+    }
+
+    h1 span {
+      color: var(--sky-dark);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+    }
+
+    h3 {
+      margin: 8px 0 10px;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .lead {
+      max-width: 690px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 36px;
+      margin: 34px 0 65px;
+      padding: clamp(26px, 5vw, 55px);
+      background: linear-gradient(125deg, #EAF7FF, #D9F0FF);
+      border: 1px solid #D2EBFC;
+      border-radius: 26px;
+    }
+
+    .hero-copy p:last-child {
+      margin-bottom: 0;
+      color: #34566D;
+    }
+
+    .logo-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .logo-disc {
+      display: grid;
+      place-items: center;
+      width: min(230px, 100%);
+      aspect-ratio: 1;
+      background: rgba(88, 185, 255, .24);
+      border-radius: 50%;
+    }
+
+    .logo {
+      display: block;
+      width: 190px;
+      max-width: 100%;
+      flex-shrink: 0;
+    }
+
+    .logo circle {
+      fill: var(--ink);
+    }
+
+    .logo text {
+      fill: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 96px;
+      font-weight: 900;
+    }
+
+    .logo-caption {
+      margin: 0;
+      color: #34566D;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
+    .section {
+      margin: 0 0 65px;
+      scroll-margin-top: 20px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .swatch {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .color {
+      height: 76px;
+    }
+
+    .swatch-info {
+      padding: 15px 17px;
+    }
+
+    .swatch-info p {
+      margin: 0;
+    }
+
+    .swatch-info .hex {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .monetization {
+      padding: clamp(24px, 4vw, 44px);
+      background: var(--paper);
+      border: 1px solid #E6EDF2;
+      border-radius: 25px;
+      scroll-margin-top: 20px;
+    }
+
+    .monetization .section-intro {
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      padding: 23px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      box-shadow: 0 8px 25px rgba(17, 22, 21, .035);
+    }
+
+    .number {
+      color: var(--sky-dark);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .note {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 17px;
+      margin-top: 20px;
+      padding: 24px;
+      background: var(--sky-light);
+      border: 1px solid #CBE8FF;
+      border-radius: 17px;
+    }
+
+    .note-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: var(--sky-dark);
+      background: var(--white);
+      border-radius: 12px;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .note h3 {
+      margin-top: 0;
+      color: #126FB4;
+    }
+
+    .note p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 25px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .footer-brand span {
+      color: var(--sky-dark);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-panel {
+        padding-top: 15px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        padding: 18px 6%;
+      }
+
+      main {
+        width: 90%;
+        padding-top: 32px;
+      }
+
+      .hero {
+        padding: 25px 21px;
+        border-radius: 20px;
+      }
+
+      .swatches {
+        grid-template-columns: 1fr;
+      }
+
+      .swatch {
+        display: grid;
+        grid-template-columns: 95px 1fr;
+        align-items: center;
+      }
+
+      .color {
+        height: 100%;
+        min-height: 76px;
+      }
+
+      .note {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+<header>
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 128 128" role="img" aria-label="Business B logo">
+      <circle cx="46" cy="17" r="13"></circle>
+      <circle cx="82" cy="17" r="13"></circle>
+      <text x="64" y="105" text-anchor="middle" font-size="96">B</text>
+    </svg>
+    Utility <span>BUSINESS</span>
+  </div>
+</header>
+
+<main>
+  <p class="eyebrow">Business software · Simple tools · Better workflows</p>
+
+  <h1>Work smarter.<br><span>Build better.</span></h1>
+
+  <p class="lead">
+    Utility Business creates practical software for freelancers, entrepreneurs
+    and small businesses. Our mission is to make everyday business tasks
+    simpler with useful web applications, accessible tools and streamlined
+    workflows.
+  </p>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Our mission</p>
+      <h2>Useful software for real business needs.</h2>
+      <p>
+        From creating professional invoices to managing projects and tracking
+        expenses, Utility Business aims to put practical business tools in one
+        simple place. We focus on software that saves time, reduces friction
+        and helps people get work done.
+      </p>
+    </div>
+
+    <div class="logo-panel">
+      <div class="logo-disc">
+        <svg class="logo" viewBox="0 0 128 128" role="img"
+             aria-label="Utility Business B logo with two dots">
+          <circle cx="46" cy="17" r="7.5"></circle>
+          <circle cx="82" cy="17" r="7.5"></circle>
+          <text x="64" y="105" text-anchor="middle">B</text>
+        </svg>
+      </div>
+      <p class="logo-caption">THE B. TWO DOTS. ONE FAMILY.</p>
+    </div>
+  </section>
+
+  <section class="section" id="palette">
+    <p class="eyebrow">01 · Brand identity</p>
+    <h2>Sky blue and charcoal</h2>
+    <p class="section-intro">
+      A clear, confident identity for a business software platform.
+      Sky blue represents clarity and progress, while charcoal provides
+      contrast and consistency across the Utility brand family.
+    </p>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="color" style="background:#58B9FF"></div>
+        <div class="swatch-info">
+          <p><b>Business Sky</b></p>
+          <p class="hex">#58B9FF</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="color" style="background:#111615"></div>
+        <div class="swatch-info">
+          <p><b>Charcoal</b></p>
+          <p class="hex">#111615</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="color" style="background:#F2F7FB"></div>
+        <div class="swatch-info">
+          <p><b>Cool Paper</b></p>
+          <p class="hex">#F2F7FB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="monetization" id="monetization">
+    <p class="eyebrow">02 · Product roadmap</p>
+    <h2>Three ideas to build Utility Business</h2>
+    <p class="section-intro">
+      We start by building useful software, attract users by solving real
+      problems, and develop sustainable ways to support and grow the platform.
+    </p>
+
+    <div class="grid">
+      <article class="card">
+        <div class="number">IDEA 01 · FIRST PRIORITY</div>
+        <h3>Business software toolkit</h3>
+        <p>
+          Build practical web applications for everyday business tasks:
+          invoice and quotation generators, expense and profit trackers,
+          business document creators, and project planning tools. Start with
+          a small number of excellent tools, then expand based on user needs.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="number">IDEA 02 · EXPANSION</div>
+        <h3>Business productivity platform</h3>
+        <p>
+          Bring multiple tools together in one accessible platform for
+          freelancers, entrepreneurs and small teams. Over time, explore
+          accounts, saved projects, premium features and subscription plans
+          where they genuinely provide additional value.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="number">IDEA 03 · MONETIZATION</div>
+        <h3>Advertising and sustainable growth</h3>
+        <p>
+          Explore Google AdSense on eligible, useful website content, such as
+          tutorials and business guides. Keep advertising separate from
+          software controls and results. Consider premium features and other
+          appropriate revenue streams as the platform grows.
+        </p>
+      </article>
+    </div>
+
+    <section class="note">
+      <div class="note-icon" aria-hidden="true">✓</div>
+      <div>
+        <h3>Our principle: value comes first</h3>
+        <p>
+          Utility Business is a software project first and an advertising
+          opportunity second. We aim to create tools people genuinely want
+          to use. AdSense requires website approval and policy compliance;
+          revenue is not guaranteed, and advertising eligibility for website
+          content does not automatically extend to a browser extension.
+        </p>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    Utility <span>BUSINESS</span>
+  </div>
+  <div>Business software · Sky-blue identity · Brand concept v2.0</div>
+</footer>
+
+</body>
+</html>

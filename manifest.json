@@ -1,0 +1,42 @@
+﻿{
+    "manifest_version":  3,
+    "name":  "Utility Lingua",
+    "version":  "0.2.0",
+    "description":  "Understand English as you read.",
+    "permissions":  [
+
+                    ],
+    "host_permissions":  [
+                             "https://api.mymemory.translated.net/*"
+                         ],
+    "background":  {
+                       "service_worker":  "background.js"
+                   },
+    "content_scripts":  [
+                            {
+                                "matches":  [
+                                                "https://*/*",
+                                                "http://*/*"
+                                            ],
+                                "js":  [
+                                           "content.js",
+                                           "quick-translate.js"
+                                       ],
+                                "run_at":  "document_idle"
+                            }
+                        ],
+    "icons":  {
+                  "16":  "icons/lingua16.png",
+                  "128":  "icons/lingua128.png",
+                  "48":  "icons/lingua48.png",
+                  "32":  "icons/lingua32.png"
+              },
+    "action":  {
+                   "default_icon":  {
+                                        "16":  "icons/lingua16.png",
+                                        "128":  "icons/lingua128.png",
+                                        "48":  "icons/lingua48.png",
+                                        "32":  "icons/lingua32.png"
+                                    }
+               }
+}

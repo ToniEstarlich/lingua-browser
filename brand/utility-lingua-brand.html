@@ -1,0 +1,361 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utility Lingua — Logo & Design Commentary</title>
+
+  <style>
+    :root {
+      --lingua-orange: #FF9500;
+      --lingua-charcoal: #111615;
+      --utility-lime: #DFFF45;
+      --paper: #F7F7F2;
+      --muted: #686D68;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--lingua-charcoal);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #dedfd7;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 1.25rem;
+    }
+
+    .brand-name span {
+      color: #B96600;
+    }
+
+    .utility-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    main {
+      width: min(1060px, 88%);
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #A85D00;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      margin: 16px 0;
+    }
+
+    .intro p {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .logo-stage {
+      min-height: 340px;
+      background: var(--lingua-orange);
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      padding: 40px;
+      margin: 36px 0;
+    }
+
+    .logo {
+      display: block;
+      width: min(250px, 70%);
+      height: auto;
+    }
+
+    .stage-caption {
+      color: var(--lingua-charcoal);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .commentary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 48px 0;
+    }
+
+    .commentary article {
+      padding: 24px;
+      background: #fff;
+      border: 1px solid #e5e5dc;
+      border-radius: 16px;
+    }
+
+    .number {
+      color: #A85D00;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+    }
+
+    .commentary p,
+    .design-note p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0 48px;
+    }
+
+    .swatch {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid #dedfd7;
+      background: #fff;
+    }
+
+    .swatch-color {
+      height: 100px;
+    }
+
+    .swatch-info {
+      padding: 14px 16px;
+    }
+
+    .swatch-info strong {
+      display: block;
+    }
+
+    .swatch-info code {
+      color: var(--muted);
+    }
+
+    .design-note {
+      border-left: 4px solid var(--lingua-orange);
+      padding: 8px 0 8px 24px;
+      margin: 48px 0;
+    }
+
+    footer {
+      border-top: 1px solid #dedfd7;
+      padding: 28px 7%;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      main {
+        padding-top: 40px;
+      }
+
+      .commentary {
+        grid-template-columns: 1fr;
+      }
+
+      .palette {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-stage {
+        min-height: 270px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand-name">Utility <span>Lingua</span></div>
+    <div class="utility-label">Logo & Design Notes</div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow">The visual identity</div>
+      <h1>Language,<br>made simpler.</h1>
+      <p>
+        Utility Lingua brings language assistance into a simple,
+        recognizable symbol. The logo combines a bold L-shaped form
+        with two dots, set against a vivid orange background.
+      </p>
+    </section>
+
+    <section aria-label="Utility Lingua logo">
+      <div class="logo-stage">
+        <div>
+          <svg
+            class="logo"
+            viewBox="0 0 128 128"
+            role="img"
+            aria-labelledby="logo-title logo-desc"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title id="logo-title">Utility Lingua logo</title>
+            <desc id="logo-desc">
+              Two dark charcoal dots above a geometric L-shaped mark
+              on an orange background.
+            </desc>
+
+            <g fill="#111615">
+              <circle cx="43" cy="17" r="8"/>
+              <circle cx="80" cy="17" r="8"/>
+            </g>
+
+            <path
+              d="M38 39 V77 Q38 94 55 94 H91"
+              fill="none"
+              stroke="#111615"
+              stroke-width="12"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <div class="stage-caption">
+            LINGUA · PRIMARY ICON
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Design commentary</div>
+      <h2>What makes the logo work?</h2>
+
+      <div class="commentary">
+        <article>
+          <div class="number">01 / THE L</div>
+          <h2>A clear identity</h2>
+          <p>
+            The L is the central shape of the mark. Its geometric,
+            continuous form gives the logo a compact silhouette that
+            can be recognized at a glance.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">02 / THE TWO DOTS</div>
+          <h2>Two points of connection</h2>
+          <p>
+            The two dots add a distinctive visual signature. They can
+            suggest conversation, exchange, or two connected points
+            in a language interaction.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">03 / THE COLOURS</div>
+          <h2>Energy and clarity</h2>
+          <p>
+            Bright orange makes the icon stand out, while dark
+            charcoal gives the symbol strong contrast and keeps
+            the design restrained.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Colour specification</div>
+      <h2>The Lingua palette</h2>
+
+      <div class="palette">
+        <div class="swatch">
+          <div
+            class="swatch-color"
+            style="background: #FF9500;"
+          ></div>
+          <div class="swatch-info">
+            <strong>Lingua Orange</strong>
+            <code>#FF9500</code>
+            <p>Primary icon background.</p>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div
+            class="swatch-color"
+            style="background: #111615;"
+          ></div>
+          <div class="swatch-info">
+            <strong>Dark Charcoal</strong>
+            <code>#111615</code>
+            <p>Logo mark and visual anchor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-note">
+      <div class="eyebrow">Brand relationship</div>
+      <h2>One utility brand. A distinct language product.</h2>
+      <p>
+        Utility uses its signature lime green, #DFFF45. Lingua uses
+        orange, #FF9500, to establish its own identity within the
+        wider Utility family. The shared minimalist approach connects
+        the products, while the colour makes Lingua easy to distinguish.
+      </p>
+    </section>
+
+    <section class="design-note">
+      <div class="eyebrow">Small-size use</div>
+      <h2>Designed for the browser toolbar</h2>
+      <p>
+        A browser extension icon must remain recognizable at small
+        sizes. The design therefore uses only two dots, one simple
+        L-shaped stroke, and two solid colours. Avoid adding tiny
+        text or unnecessary decorative details to the icon itself.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Utility Lingua — Logo concept and visual identity commentary.
+  </footer>
+</body>
+</html>
